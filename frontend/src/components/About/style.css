@@ -1,0 +1,36 @@
+.about{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #00302E;
+    padding: 100px 0;
+    border: none;
+  
+}
+.about__leftContainer , .about__rightContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about__leftContainer > div{
+    width: 430px;
+}
+.about__leftContainer >div> h1{
+    color: #FFFFFF;
+    font-size: 45px;
+    line-height: 50px;
+    padding-bottom: 10px;
+
+}
+.about__leftContainer >div> p{
+    color: #FFFFFF;
+    font-size: 15px;
+    padding-bottom: 10px;
+   
+
+}
+
+.about__rightContainer > img{
+width: 350px;
+height: 350px;
+}

@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00302E;
+
+   
+}
+.header__logoContainer{
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 20px; 
+    font-weight: 500;
+    
+
+}
+.header__logo{
+    width: 35px;
+    height: 42px;
+    margin-right: 10px;
+}
+.link__Item{
+margin-left: 50px;
+background-color: transparent;
+border: none;
+color: #FBDDBB;
+font-size: 16px;
+font-weight: 500;
+text-decoration: none;
+}
+
+.link__Item:hover{
+    background-color: transparent;
+border: none;
+color: #FBDDBB;
+opacity: 0.7;
+}
+.link__Item:focus{
+    background-color: transparent;
+border: none;
+
+
+}
