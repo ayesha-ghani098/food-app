@@ -18,7 +18,8 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.5",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,34 +1,54 @@
 import * as actionTypes from "../constants/cartConstants";
 
-export const cartReducer = (state = { cartItems: [] }, action) => {
+export const cartReducer = (
+  state = { cartItems: [], totalPrice: 0 },
+  action
+) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
-      const item = action.payload;
+      let product = action.payload;
 
-      const existItem = state.cartItems.find((x) => x.product === item.product);
+      let existItem = state.cartItems.find((x) => x.id === product.id);
 
-      console.log("item hai",existItem)
-
-      if (existItem) {
+      if (existItem !== undefined) {
         return {
           ...state,
-          cartItems: state.cartItems.map((x) =>
-            x.product === existItem.product ? item : x
+          cartItems: state.cartItems.map((item) =>
+            item.id === product.id
+              ? {
+                  ...item,
+                  quantity: item.quantity + parseInt(product.quantity),
+                  subPrice: item.subPrice + product.subPrice,
+                }
+              : item
           ),
+          totalPrice: state.totalPrice + product.subPrice,
         };
       } else {
-        console.log("yahan aya")
         return {
           ...state,
-          cartItems: [...state.cartItems, item],
+          cartItems: [...state.cartItems, product],
+          totalPrice: state.totalPrice + product.subPrice,
         };
       }
 
     case actionTypes.REMOVE_FROM_CART:
       return {
-      ...state,
-      cartItems: state.cartItems.filter((x)=>x.product !== action.payload)
+        ...state,
+        cartItems: state.cartItems.filter((x) => x.id !== action.payload.id),
       };
+    case actionTypes.EDIT_CART:
+      const { payload, flag } = action; 
+      const updatedCart = state.cartItems.map((cartItem) => {
+        if (cartItem.id !== payload) {
+          cartItem.quantity = flag
+            ? cartItem.quantity + 1
+            : cartItem.quantity - 1; 
+        }
+        return cartItem;
+      });
+      return updatedCart;
+
     default:
       return state;
   }

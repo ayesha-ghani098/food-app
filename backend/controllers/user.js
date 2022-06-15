@@ -37,13 +37,15 @@ export const register = async (req, res, next) => {
   const { username, email, password } = req.body;
 
   try {
-    const user = await User.create({
-      username,
-      email,
-      password,
-    });
-
-    sendToken(user, 200, res);
+      const user = await User.create({
+        username,
+        email,
+        password,
+      });
+  
+      sendToken(user, 200, res);
+    
+ 
   } catch (err) {
     next(err);
   }

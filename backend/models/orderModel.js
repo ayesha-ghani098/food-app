@@ -2,6 +2,14 @@ import mongoose from "mongoose";
 
 const orderSchema = mongoose.Schema(
   {
+    userId:{
+      type: String,
+      required: [true, "UserId Required"],
+    },
+    userId:{
+      type: String,
+      required: [true, "OrderId Required"],
+    },
     username: {
       type: String,
       required: [true, "Please provide a name"],
@@ -31,6 +39,14 @@ const orderSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    shippingMode:{
+      type: String,
+      required: [true, "Please provide shipping mode"],
+    },
+    paymentMode :{
+      type: String,
+      required: [true, "Please provide payment mode"],
+    }
   },
   { timestamps: true }
 );

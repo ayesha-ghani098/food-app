@@ -2,7 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const OrderModal = (props) => {
+const OrderCanvas = (props) => {
   return (
     <Offcanvas show={props.show} onHide={props.hide} placement='end'>
     <Table>
@@ -48,4 +48,4 @@ const OrderModal = (props) => {
   )
 }
 
-export default OrderModal
+export default OrderCanvas

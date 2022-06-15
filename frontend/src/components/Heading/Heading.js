@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Heading = () => {
+const BasicHeading = (props) => {
   return (
-    <div>Heading</div>
+    <h3 className='basic__heading'>{props.heading}</h3>
   )
 }
 
-export default Heading
+export default BasicHeading;

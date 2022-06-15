@@ -3,11 +3,13 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import dotenv from "dotenv";
 import cors from "cors"
-// import bodyParser from "body-parser";
 import errorHandler from './middleware/error.js';
+
+// Routes
 import authRoutes from './route/userRoute.js';
-import privateRoutes from './route/private.js';
+import privateRoutes from './route/privateRoute.js';
 import productRoutes from "./route/productRoute.js";
+import orderRoutes from "./route/orderRoute.js";
 
 
 dotenv.config({ path: "./config.env" });
@@ -22,14 +24,16 @@ connectDB();
 // app.use(bodyParser.json());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(errorHandler);
 
 // routes
 app.use('/api/products',productRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/order',orderRoutes)
 app.use('/api/private', privateRoutes);
 
 
-app.use(errorHandler);
+
 
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, process.env.HOST_NAME, () => {

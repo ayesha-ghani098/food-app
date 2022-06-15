@@ -6,13 +6,18 @@
   padding: 30px 0px;
 }
 /* -----------LOGIN / SIGNUP---------- */
+
 .auth__Container #image {
   width: 900px;
   height: 657px;
 }
-.auth__Container #rightContainer {
+.auth__Container #right__signupContainer {
   height: 657px;
   padding: 80px 100px;
+}
+.auth__Container #right__loginContainer {
+  height: 657px;
+  padding: 150px 100px;
 }
 .auth__Container .heading {
   display: flex;
@@ -44,72 +49,38 @@
   text-decoration: none;
   color: #00302e;
 }
-/* -----------Sidebar----------- */
-
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 250px;
-  background-color: #fbfbfb;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-  padding: 60px 0;
-}
-
-.sidebar__logoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #00302e;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 50px;
-}
-.sidebar__logo {
-  width: 45px;
-  height: 52px;
-  margin-right: 10px;
-}
-
-.sidebar li {
-  display: flex;
-  align-items: center;
-  color: #707070;
-  font-size: 14px;
-  font-weight: 450;
-  padding: 16px 0px;
-  text-decoration: none;
-  margin: 0;
-}
-.sidebar li:hover {
-  font-size: 17px;
-  cursor: pointer;
-}
-.sidebar li img {
-  margin-right: 15px;
-  width: 17px;
-}
-#cart__icon {
-  margin-right: 19px;
-  width: 13px !important;
-}
+/* --------DASHBOARD----------- */
 
 .dashboard {
   margin-left: 250px;
   padding: 1px 16px;
-  height: 1000px;
+  /* height: 1000px; */
 }
 .dashboard__header h2 {
   font-size: 30px;
   font-weight: 600;
   color: #00302e;
-  margin-bottom: 10px;
 }
 .dashboard__header p {
-  font-size: 15px;
-  color: 000000;
+  font-size: 16px;
+  padding-top: 3px;
+  color: #000000;
   font-weight: 400;
+}
+.dashboard__headerRight{
+  display: flex;
+}
+.dashboard__headerRight>img{
+width: 40px;
+height: 40px;
+}
+
+.dashboard__headerRight>button{
+  display: flex;
+  padding: 5px 20px;
+  margin-left: 20px;
+  background-color: #00302e;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 700px) {

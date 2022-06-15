@@ -1,0 +1,98 @@
+/* --------PRODUCT MODEL START-------- */
+#canvasmedium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 0 30px;
+  text-align: center;
+}
+#canvaslarge {
+  width: 55%;
+  padding: 30px;
+}
+.product__Details > .detail__imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product__Details > .detail__imageContainer > img {
+  width: 200px;
+  height: 200px;
+}
+.product__Details > h1 {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+.product__Details > p {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+}
+.detail__priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail__priceContainer > span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.detail__bottom {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.detail__bottom > div > input {
+  margin-left: 8px;
+  width: 40px;
+}
+
+.detail__bottom > button {
+  width: 150px;
+  background-color: #00302e;
+  color: #ffffff;
+  padding: 10px 0;
+  border: none;
+}
+.detail__bottom > button:focus {
+  border: none;
+}
+/* --------PRODUCT MODEL END-------- */
+
+/* --------CARD MODEL START-------- */
+.table {
+  scroll-behavior: auto;
+}
+
+.cart__totalPrice {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  padding: 10px 20px;
+  padding-bottom: 20px !important;
+  font-weight: 400;
+}
+.cart__totalPrice > span {
+  color: #00302e;
+  padding-left: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: -2px;
+}
+.cart__emptyHeading {
+  color: #00302e;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* --------CARD MODEL END---------- */

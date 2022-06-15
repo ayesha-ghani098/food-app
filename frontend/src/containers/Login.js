@@ -42,7 +42,7 @@ if(localStorage.getItem("authToken")){
       navigate("/dashboard", { replace: true });
     } catch (err) {
       console.log(err);
-      // setError(err.response.data.error);
+      setError(err.message);
     }
   };
 
@@ -55,7 +55,7 @@ if(localStorage.getItem("authToken")){
 
 
   return (
-    <div className="fluid-container auth__Container">
+    <div className="fluid-container auth__Container login">
       <div className="row  g-0">
         <div className="col-lg-6 col-md-6 col-sm-12">
           <img
@@ -65,7 +65,7 @@ if(localStorage.getItem("authToken")){
             alt="loginImage"
           />
         </div>
-        <div id="rightContainer" className="col-lg-6 col-md-6 col-sm-12">
+        <div id="right__loginContainer" className="col-lg-6 col-md-6 col-sm-12">
           <div>
             <h2 className="heading">Welcome Back!</h2>
             <form onSubmit={loginHandler}>

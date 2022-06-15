@@ -1,0 +1,51 @@
+/* -----------Sidebar----------- */
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    background-color: #00302e;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    padding: 60px 0;
+  }
+  
+  .sidebar__logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E5E5E5;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+  .sidebar__logo {
+  margin-left: -50px;
+    width: 45px;
+    height: 52px;
+    margin-right: 10px;
+  }
+  
+  .sidebar li {
+    display: flex;
+    align-items: center;
+    color: #E5E5E5;
+    font-size: 14px;
+    font-weight: 450;
+    padding: 16px 0px;
+    text-decoration: none;
+    margin: 0;
+  }
+  .sidebar li:hover {
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .sidebar li img {
+    margin-right: 15px;
+    width: 17px;
+  }
+  #cart__icon {
+    margin-right: 19px;
+    width: 13px !important;
+  }

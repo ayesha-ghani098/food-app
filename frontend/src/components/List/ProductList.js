@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+// Style and Assets
+import './style.css'
+
 // Actions
 import { getAllProducts } from "../../store/actions/productAction";
 
@@ -14,16 +17,14 @@ const ProductList = () => {
 
   const { loading, products, error } = productState;
 
-  console.log(products);
-
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="product__List">
       {loading ? (
-        <h1>loading.....</h1>
+        <h3>loading.....</h3>
       ) : error ? (
         <h1>Error while fetching</h1>
       ) : products ? (

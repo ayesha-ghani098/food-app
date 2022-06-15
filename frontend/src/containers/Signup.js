@@ -47,7 +47,7 @@ const Signup = () => {
       navigate("/dashboard", { replace: true });
     } catch (err) {
       console.log(err);
-      // setError(err);
+      setError(err.message);
     }
   };
 
@@ -70,7 +70,7 @@ const Signup = () => {
             alt="loginImage"
           />
         </div>
-        <div id="rightContainer" className="col-lg-6 col-md-6 col-sm-12">
+        <div id="right__signupContainer" className="col-lg-6 col-md-6 col-sm-12">
           <div>
             <h2 className="heading">Welcome to Lilies!</h2>
             <form onSubmit={registerHandler}>
