@@ -1,3 +1,4 @@
+import { uuid } from "uuidv4";
 import User from "../models/userModel.js";
 import ErrorResponse from "../utils/errorResponse.js";
 import sendEmail from "../utils/sendEmail.js";
@@ -10,7 +11,6 @@ export const login = async (req, res, next) => {
   if (!email || !password) {
     return next(new ErrorResponse("Please provide an email and password", 400));
   }
-
   try {
     // Check that user exists by email
     const user = await User.findOne({ email }).select("+password");
@@ -34,18 +34,21 @@ export const login = async (req, res, next) => {
 
 // @desc    Register user
 export const register = async (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, email, number, address, password } = req.body.user;
 
   try {
-      const user = await User.create({
-        username,
-        email,
-        password,
-      });
-  
-      sendToken(user, 200, res);
-    
- 
+    const user = await User.create({
+      id: uuid(),
+      username,
+      email,
+      number,
+      address,
+      password,
+    });
+
+    res
+      .status(200)
+      .json({ sucess: true, data: "User successfully Registered" });
   } catch (err) {
     next(err);
   }
@@ -87,8 +90,6 @@ export const forgotpassword = async (req, res, next) => {
 
       res.status(200).json({ success: true, data: "Email Sent" });
     } catch (err) {
-      console.log(err);
-
       user.resetPasswordToken = undefined;
       user.resetPasswordExpire = undefined;
 
@@ -135,7 +136,15 @@ export const resetpassword = async (req, res, next) => {
   }
 };
 
-
+export const getUserbyId = async (req, res, next) => {
+  const userId = req.params.userId;
+  try {
+    const users = await User.find({ userId });
+    res.status(200).json({ success: true, data: users });
+  } catch (err) {
+    next(err);
+  }
+};
 
 export const authenticateToken = async (req, res) => {
   const user = req.user;
@@ -149,31 +158,5 @@ export const authenticateToken = async (req, res) => {
 
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
-  res.status(statusCode).json({ sucess: true, token });
+  res.status(statusCode).json({ sucess: true, token, user });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

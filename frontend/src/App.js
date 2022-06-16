@@ -1,10 +1,10 @@
-import {React}from "react";
-
+import React from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+
 
 // Style and Assets
 import "./App.css";
@@ -15,6 +15,7 @@ import Home from "./containers/Home";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,7 +23,8 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
-      <Route path="dashboard" element={<Dashboard/>} />
+      <Route path="dashboard" element={<Dashboard/>} >
+      </Route>
     </Routes>
   </BrowserRouter>
   );

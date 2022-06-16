@@ -6,18 +6,17 @@ import {
   login,
   forgotpassword,
   resetpassword,
-  authenticateToken,
+  getUserbyId,
 } from "../controllers/user.js";
-import protect from "../middleware/auth.js";
 
 const router = express.Router();
 
 // Routes
-router.route("/getMe").get(protect, authenticateToken);
 router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/forgotpassword").post(forgotpassword);
 router.route("/resetpassword/:resetToken").post(resetpassword);
+router.route("/getUserById/:userId",getUserbyId)
 
 export default router;
 

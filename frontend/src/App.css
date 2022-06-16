@@ -1,6 +1,21 @@
 .app {
   background-color: #00302e;
 }
+#scroll{
+  overflow: auto ;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00302e; 
+  border-radius: 10px;
+}
 /* -----------HOME---------- */
 .container {
   padding: 30px 0px;
@@ -8,12 +23,13 @@
 /* -----------LOGIN / SIGNUP---------- */
 
 .auth__Container #image {
-  width: 900px;
+  width: 700px;
   height: 657px;
+  position: fixed;
 }
 .auth__Container #right__signupContainer {
   height: 657px;
-  padding: 80px 100px;
+  padding: 50px 100px;
 }
 .auth__Container #right__loginContainer {
   height: 657px;
@@ -41,6 +57,7 @@
 .auth__Container .signup__link {
   display: flex;
   justify-content: center;
+ padding-bottom: 50px;
 }
 .auth__Container .signup__link > .span {
   display: flex;
@@ -111,4 +128,17 @@ height: 40px;
   justify-content: space-between;
   align-items: center;
   padding: 50px 20px;
+}
+
+.textArea{
+  width: 100%;
+display: block;
+padding: 15px 10px;
+border: 0.1px solid #faf1e7;
+margin-bottom: 25px;
+}
+.textArea::placeholder{
+  color:#9caaaa;
+  font-size: 14px;
+  font-weight: 400;
 }

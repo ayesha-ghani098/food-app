@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const CheckoutCanvas = () => {
+// Styled Components
+import Offcanvas from "react-bootstrap/Offcanvas";
+
+// Components
+import Button from "../Button/Button";
+import BasicHeading from "../Heading/Heading";
+
+const CheckoutCanvas = (props) => {
   return (
-    <div>CheckoutCanvas</div>
-  )
-}
+    <Offcanvas
+      id="canvasmedium"
+      show={props.show}
+      onHide={props.hide}
+      placement="end"
+    >
+      <BasicHeading heading="Checkout" />
 
-export default CheckoutCanvas
+      <form>
+        <Button type="submit" label="Make Payment" />
+      </form>
+    </Offcanvas>
+  );
+};
+
+export default CheckoutCanvas;

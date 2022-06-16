@@ -1,71 +1,107 @@
 /* --------PRODUCT CARD---------- */
-.product__Card{
-    width: 250px;
-    padding: 10px 40px;
-    margin-bottom: 30px !important;
+.product__Card {
+  width: 250px;
+  padding: 10px 40px;
+  margin-bottom: 30px !important;
 }
 
-.product__Top>div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.product__Top > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.product__Top>div>img{
-    width: 100px;
-    height: 100px;
+.product__Top > div > img {
+  width: 100px;
+  height: 100px;
 }
 
-.product__Top>h2{
+.product__Top > h2 {
   text-align: center;
-    padding-top: 20px;
-   font-size: 17px;
-line-height: 0.8;
-   font-weight: 600;
+  padding-top: 20px;
+  font-size: 17px;
+  line-height: 0.8;
+  font-weight: 600;
 }
-.product__Top>p{
- text-align: center;
-       font-size: 15px;
-       font-weight: 450;
-       padding-bottom: 0px;
-       color: #000000
-    }
-
-.product__Bottom{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.product__Top > p {
+  overflow: hidden;
+  height: 45px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 450;
+  padding-bottom: 0px;
+  color: #000000;
 }
 
-.product__Bottom> span{
-    font-size: 15px;
-    font-weight: 600;
+.product__Bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.product__Bottom> button{
-    font-size: 15px;
-    font-weight: 600;
+
+.product__Bottom > span {
+  font-size: 15px;
+  font-weight: 600;
+}
+.product__Bottom > button {
+  font-size: 15px;
+  font-weight: 600;
   border: none;
   background-color: transparent;
-  color: #06E775;
+  color: #06e775;
 }
 
 /* --------CART CARD---------- */
 
-.cart__item{
-   margin: 10px 0;
+.cart__item {
+  margin: 10px 0;
 }
-.cart__itemLeft{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.cart__itemLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.cart__itemLeft>div{
- padding: 0 10px;
+.cart__itemLeft > div {
+  padding: 0 10px;
 }
-.cart__itemLeft>div>img{
-   width: 70px;
-   height: 70px;
-   }
-.cart__itemLeft>div>h3{
-    font-size: 17px;
-    font-weight: 600;
+.cart__itemLeft > div > img {
+  width: 70px;
+  height: 70px;
+}
+.cart__itemLeft > div > h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* --------Order CARD---------- */
+.order {
+  padding: 0 20px;
+}
+.order__Card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  margin-top: 20px;
+}
+
+.order__Date {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+}
+.order__Date p {
+  margin-left: 10px;
+}
+
+
+.cart__Icon{
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  /* background-color: #f3c294; */
+  color: #000000;
+margin-right: 10px;
+}
+.cart__Icon:focus{
+background-color:transparent;
 }

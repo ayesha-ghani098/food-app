@@ -1,51 +1,27 @@
-import React from 'react'
-import Table from 'react-bootstrap/Table';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import React from "react";
+
+// Style and Assets
+import "./style.css";
+
+// Styled Components
+import Offcanvas from "react-bootstrap/Offcanvas";
+
+// Components
+import BasicHeading from "../Heading/Heading";
+import OrderList from "../List/OrderList";
 
 const OrderCanvas = (props) => {
   return (
-    <Offcanvas show={props.show} onHide={props.hide} placement='end'>
-    <Table>
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Quantity</th>
-        <th>Unit Price</th>
-        <th>SubTotal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-        <div><h3>Menu 1</h3></div>
-        <span>Remove</span>
-        </td>
-        <td>3</td>
-        <td>Rs 400</td>
-        <td>Rs 1200</td>
-      </tr>
-      <tr>
-        <td>
-        <div><h3>Menu 1</h3></div>
-        <span>Remove</span>
-        </td>
-        <td>3</td>
-        <td>Rs 400</td>
-        <td>Rs 1200</td>
-      </tr>
-      <tr>
-      <td>
-      <div><h3>Menu 1</h3></div>
-      <span>Remove</span>
-      </td>
-      <td>3</td>
-      <td>Rs 400</td>
-      <td>Rs 1200</td>
-    </tr>
-    </tbody>
-  </Table>
-  </Offcanvas>
-  )
-}
+    <Offcanvas
+      id="canvaslarge"
+      show={props.show}
+      onHide={props.hide}
+      placement="end"
+    >
+      <BasicHeading heading="Your Orders" />
+      <OrderList/>
+    </Offcanvas>
+  );
+};
 
-export default OrderCanvas
+export default OrderCanvas;

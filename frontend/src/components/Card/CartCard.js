@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 
 // Actions
@@ -10,35 +10,41 @@ import temporary from "../../assets/menu3.png";
 
 const CartCard = (props) => {
   const { item } = props;
-  const [flag, setFlag] = useState(false);
   const dispatch = useDispatch();
 
-  const removeFromCartHandler = (id, value) => {
-    setFlag(value);
-    dispatch(editCart(id, flag));
+  const removeFromCartHandler = (Flag) => {
+    dispatch(editCart(item, Flag));
   };
   return (
-    <>
     <tr className="cart__item" key={item.id}>
       <td className="cart__itemLeft">
-        <div >
+        <div>
           <img src={temporary} alt="CartImage" />
         </div>
         <div>
-        <h3>{item.name}</h3>
-        <span onClick={() => removeFromCartHandler(item.id, true)}>
-          Increment
-        </span>
-        <span onClick={() => removeFromCartHandler(item.id, false)}>
-          Decrement
-        </span>
+          <h3>{item.name}</h3>
+          <span
+          className="cart__Icon"
+            onClick={() => {
+              removeFromCartHandler(true);
+            }}
+          >
+           ++
+          </span>
+          <span
+          className="cart__Icon"
+            onClick={() => {
+              removeFromCartHandler(false);
+            }}
+          >
+           --
+          </span>
         </div>
       </td>
       <td>{item.quantity}</td>
       <td>{item.price}</td>
       <td>Rs {item.subPrice}</td>
     </tr>
-    </>
   );
 };
 

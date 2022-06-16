@@ -1,4 +1,4 @@
-/* --------PRODUCT MODEL START-------- */
+/* --------PRODUCT CANVAS START-------- */
 #canvasmedium {
   display: flex;
   justify-content: center;
@@ -66,9 +66,9 @@
 .detail__bottom > button:focus {
   border: none;
 }
-/* --------PRODUCT MODEL END-------- */
+/* --------PRODUCT CANVAS END-------- */
 
-/* --------CARD MODEL START-------- */
+/* --------CART CANVAS START-------- */
 .table {
   scroll-behavior: auto;
 }
@@ -95,4 +95,44 @@
   font-weight: 600;
 }
 
-/* --------CARD MODEL END---------- */
+/* --------CART CANVAS END---------- */
+
+
+/* --------CHECKOUT CANVAS START---------- */
+
+/* --------CHECKOUT CANVAS END---------- */
+
+
+/* --------PRODILE CANVAS START---------- */
+#profilecanvas{
+  width: 40%;
+  padding: 30px 30px;
+}
+.profile__avatarContainer{
+  margin: 30px 0;
+  display: flex;
+}
+.profile__avatarContainer>img{
+  width: 100px;
+  height: 100px;
+}
+.profile__avatarContainer>div{
+  padding: 10px 20px;
+}
+.profile__avatarContainer>div>h2{
+  font-size: 30px;
+  font-weight: 700;
+  color: #00302e;
+}
+.h3{
+  font-size: 16px;
+  font-weight: 700;
+  color: #00302e;
+}
+.span{
+  font-size: 16px;
+  font-weight: 500;
+  color: #00302e;
+}
+
+/* --------PRODILE CANVAS END---------- */

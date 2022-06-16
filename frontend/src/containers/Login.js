@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from "react";
-import {Link,useNavigate} from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 // Style and Assets
 import LoginImage from "../assets/login.png";
@@ -8,51 +8,39 @@ import LoginImage from "../assets/login.png";
 // Components
 import Button from "../components/Button/Button";
 import Input from "../components/Input/Input";
+import { loginUser } from "../store/actions/userAction";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [Error, setError] = useState("");
   let navigate = useNavigate();
 
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user);
+  const { loading, error } = userState;
 
-  useEffect(()=>{
-if(localStorage.getItem("authToken")){
-  navigate('/dashboard', { replace: true })
-}
-  },[navigate])
+  useEffect(() => {
+    if (localStorage.getItem("authToken")) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [navigate]);
 
   const loginHandler = async (e) => {
     e.preventDefault();
-    const config = {
-      header: {
-        "Content-Type": "application/json",
-      },
-    };
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:8080/api/auth/login",
-        { email, password },
-        config
-      );
-
-      localStorage.setItem("authToken",data.token);
+      dispatch(loginUser(email, password,navigate));
       reset();
-      navigate("/dashboard", { replace: true });
     } catch (err) {
-      console.log(err);
       setError(err.message);
     }
   };
 
-
-  const reset = () =>{
+  const reset = () => {
     setEmail("");
     setPassword("");
-  }
-
-
+  };
 
   return (
     <div className="fluid-container auth__Container login">
@@ -66,31 +54,41 @@ if(localStorage.getItem("authToken")){
           />
         </div>
         <div id="right__loginContainer" className="col-lg-6 col-md-6 col-sm-12">
-          <div>
-            <h2 className="heading">Welcome Back!</h2>
-            <form onSubmit={loginHandler}>
-            <Input
-            type="email"
-            required
-            value={email}
-            placeholder="Your Email Address"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            type="password"
-            required
-            value={password}
-            placeholder="Your Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-            <Button type="submit" label="LOGIN" />
-            </form>
-            <div className="links">
-              <Link className="span" to="/signup">Create an account</Link>
-              <Link className="span" to="/">Forgot Passoword</Link>
+          {loading ? (
+            <h2>Signing In.....</h2>
+          ): error ? (
+            <h1>Error while registering</h1>
+          ) : (
+            <div>
+              <h2 className="heading">Welcome Back!</h2>
+              <form onSubmit={loginHandler}>
+                <Input
+                  type="email"
+                  required
+                  value={email}
+                  placeholder="Your Email Address"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  type="password"
+                  required
+                  value={password}
+                  placeholder="Your Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Button type="submit" label="LOGIN" />
+              </form>
+              <div className="links">
+                <Link className="span" to="/signup">
+                  Create an account
+                </Link>
+                <Link className="span" to="/">
+                  Forgot Passoword
+                </Link>
+              </div>
+              {Error && <span className="error">{Error}</span>}
             </div>
-            {error && <span className="error">{error}</span>}
-          </div>
+          )}
         </div>
       </div>
     </div>

@@ -10,13 +10,14 @@ import temporary from "../../assets/menu2.png";
 // Actions
 import { addToCart } from "../../store/actions/cartAction";
 
-const ProductCanvas = (props) => {
+const ProductDetailCanvas = (props) => {
   const [quantity, setQuantity] = useState(1);
   const { name, description, price, image } = props.product;
   const dispatch = useDispatch();
 
   const addToCartHandler = () => {
     dispatch(addToCart(props.product, quantity));
+    setQuantity(1);
     props.hide();
   };
   return (
@@ -60,4 +61,4 @@ const ProductCanvas = (props) => {
   );
 };
 
-export default ProductCanvas;
+export default ProductDetailCanvas;

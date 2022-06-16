@@ -6,7 +6,7 @@ import temporary from '../../assets/menu1.png';
 import "./style.css";
 
 // Components
-import ProductCanvas from "../Canvas/Product";
+import ProductDetailCanvas from "../Canvas/ProductDetail";
 
 const ProductCard = (props) => {
   const { name, description, image, price } = props.product;
@@ -22,13 +22,13 @@ const ProductCard = (props) => {
           <img src={temporary} alt="Menu Item" />
         </div>
         <h2>{name}</h2>
-        <p>{description} {description} {description}</p>
+        <p>{description}</p>
       </div>
       <div className="product__Bottom">
         <span>Rs: {price}</span>
         <button onClick={handleShow}>Add to Cart</button>
       </div>
-      <ProductCanvas {...props} show={show} hide={handleClose} />
+      <ProductDetailCanvas {...props} show={show} hide={handleClose} />
     </div>
   );
 };
