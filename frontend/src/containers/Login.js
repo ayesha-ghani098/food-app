@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
 // Style and Assets
 import LoginImage from "../assets/login.png";
 
@@ -13,12 +12,11 @@ import { loginUser } from "../store/actions/userAction";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [Error, setError] = useState("");
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
-  const { loading, error } = userState;
+  const { error } = userState;
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -29,12 +27,8 @@ const Login = () => {
   const loginHandler = async (e) => {
     e.preventDefault();
 
-    try {
       dispatch(loginUser(email, password,navigate));
       reset();
-    } catch (err) {
-      setError(err.message);
-    }
   };
 
   const reset = () => {
@@ -54,11 +48,6 @@ const Login = () => {
           />
         </div>
         <div id="right__loginContainer" className="col-lg-6 col-md-6 col-sm-12">
-          {loading ? (
-            <h2>Signing In.....</h2>
-          ): error ? (
-            <h1>Error while registering</h1>
-          ) : (
             <div>
               <h2 className="heading">Welcome Back!</h2>
               <form onSubmit={loginHandler}>
@@ -86,9 +75,9 @@ const Login = () => {
                   Forgot Passoword
                 </Link>
               </div>
-              {Error && <span className="error">{Error}</span>}
+              {error && <span className="error">{error}</span>}
             </div>
-          )}
+
         </div>
       </div>
     </div>

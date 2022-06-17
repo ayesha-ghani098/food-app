@@ -19,7 +19,7 @@ export const userReducer = (
       };
     case actionTypes.USER_REGISTER_FAILURE:
       return {
-        ERROR: action.payload,
+        error: action.payload,
         Loading: false,
       };
     case actionTypes.USER_lOGIN_REQUEST:
@@ -33,7 +33,7 @@ export const userReducer = (
       };
     case actionTypes.USER_LOGIN_FAILURE:
       return {
-        ERROR: action.payload,
+        error: action.payload,
         loading: false,
       };
     default:

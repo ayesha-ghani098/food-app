@@ -3,13 +3,14 @@ import errorResponse from '../utils/errorResponse.js';
 const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
+  console.log("yahan ata h",err.message);
 
   // if (err.code === 11000) {
   //   const message = 'Duplicate Field Value Entered';
   //   error = new errorResponse(message, 400);
   // }
   if (err.name === 'ValidationError') {
-    const message = Object.values(err.errors).map((val) => val.message);
+    const message = Object.values(err.errors).map((val) => val._message);
     error = new errorResponse(message, 400);
   }
 

@@ -37,7 +37,7 @@ export const register = async (req, res, next) => {
   const { username, email, number, address, password } = req.body.user;
 
   try {
-    const user = await User.create({
+   await User.create({
       id: uuid(),
       username,
       email,
@@ -50,7 +50,8 @@ export const register = async (req, res, next) => {
       .status(200)
       .json({ sucess: true, data: "User successfully Registered" });
   } catch (err) {
-    next(err);
+    console.log(err);
+    next(err.name);
   }
 };
 

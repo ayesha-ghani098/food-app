@@ -18,7 +18,8 @@ export const registerUser = (user, navigate) => async (dispatch) => {
     dispatch({ type: actionTypes.USER_REGISTER_SUCCESS, payload: data.data });
     navigate("/login", { replace: true });
   } catch (err) {
-    dispatch({ type: actionTypes.USER_REGISTER_FAILURE, payload: err });
+   
+    dispatch({ type: actionTypes.USER_REGISTER_FAILURE, payload: err});
   }
 };
 
@@ -30,7 +31,7 @@ export const loginUser = (email, password, navigate) => async (dispatch) => {
     },
   };
   try {
-    const { data } = await axios.post(
+    const {data} = await axios.post(
       "http://localhost:8080/api/auth/login",
       { email, password },
       config

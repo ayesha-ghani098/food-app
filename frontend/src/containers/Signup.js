@@ -35,12 +35,8 @@ const Signup = () => {
 
     let user = { username, email, number, address, password };
 
-    try {
       dispatch(registerUser(user,navigate));
       reset();
-    } catch (err) {
-      setError(err.message);
-    }
   };
 
   const reset = () => {
@@ -129,6 +125,8 @@ const Signup = () => {
                   Already have an account. LOGIN
                 </Link>
                 {Error && <span className="error">{Error}</span>}
+              
+              {error && <span>{error}</span>}  
               </div>
             </div>
           )}
