@@ -62,6 +62,7 @@ const Signup = () => {
         >
 
             <div>
+            {error? error.map((error,index)=><span className="error">{error.msg}</span>):<></>}
               <h2 className="heading">Welcome to Lilies!</h2>
               <form onSubmit={registerHandler}>
                 <Input
@@ -107,6 +108,7 @@ const Signup = () => {
                   placeholder="Confirm Password"
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
+                {errorMsg && errorMsg}
                 <Button type="submit" label="SIGN UP" />
               </form>
               <div className="signup__link">
@@ -117,8 +119,10 @@ const Signup = () => {
                 >
                   Already have an account. LOGIN
                 </Link>
-                {error? error.map((error,index)=><span className="error">{error.msg}</span>):<></>}
-              </div>
+               
+              
+                </div>
+                
             </div>
           
         </div>

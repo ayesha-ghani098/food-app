@@ -23,10 +23,10 @@ router.post("/register", [
         .isLength({ min: 8 })
         .trim(),
 
-    body('username', "Name is't correct")
+    body('username', "Name should be atleast 3 letters")
         .trim()
         .isLength({ min: 3 }),
-    body('number', "Number is't correct")
+    body('number', "Phone number should contain 11 numbers")
         .isNumeric()
         .isLength({ min: 11 })
 ],register);
