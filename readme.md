@@ -8,18 +8,18 @@ payment, and process the order. Users can also view orders and their profile
 details. The admin can add and edit food items and can view the order details.
 
 ## 💻 Tech Stack Used
-• Frontend – React, Redux
-• Backend – NodeJS, ExpressJS
-• Database – MongoDB
+### • Frontend – React, Redux
+### • Backend – NodeJS, ExpressJS
+### • Database – MongoDB
 
 ## 💻Features
 USER
-• User can Register and Login
-• User can Add, Update, Remove Items from Cart
-• User can place order
-• UserProfile Details can be seen
-• Products List
+### • User can Register and Login
+### • User can Add, Update, Remove Items from Cart
+### • User can place order
+### • UserProfile Details can be seen
+### • Products List
 
 ## ADMIN
-• Admin can Add, Update, Delete, Edit Items
-• Admin can see all orders
+### • Admin can Add, Update, Delete, Edit Items
+### • Admin can see all orders
