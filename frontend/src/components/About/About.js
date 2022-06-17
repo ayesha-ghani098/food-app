@@ -6,9 +6,6 @@ import Badges from '../../assets/Badges.png'
 import AboutImage from '../../assets/About.png';
 
 
-// Styled Components
-
-
 
 const HomeHeader = () => {
   return (
