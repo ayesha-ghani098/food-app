@@ -34,7 +34,6 @@ app.use('/api/private', privateRoutes);
 
 
 
-
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, process.env.HOST_NAME, () => {
   console.log(`Server is listening at http://${process.env.HOST_NAME}:${PORT}`);

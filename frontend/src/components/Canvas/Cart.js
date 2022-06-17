@@ -81,7 +81,7 @@ const CartCanvas = (props) => {
                 <h2 className="cart__emptyHeading">Your Cart is Empty</h2>
               ) : (
                 cartItems.map((item, index) => {
-                  return <CartCard item={item} />;
+                  return <CartCard key={item.id} item={item} />;
                 })
               )}
             </tbody>

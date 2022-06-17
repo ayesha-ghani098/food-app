@@ -27,8 +27,8 @@ const Login = () => {
   const loginHandler = async (e) => {
     e.preventDefault();
 
-      dispatch(loginUser(email, password,navigate));
-      reset();
+    dispatch(loginUser(email, password, navigate));
+    reset();
   };
 
   const reset = () => {
@@ -48,36 +48,42 @@ const Login = () => {
           />
         </div>
         <div id="right__loginContainer" className="col-lg-6 col-md-6 col-sm-12">
-            <div>
-              <h2 className="heading">Welcome Back!</h2>
-              <form onSubmit={loginHandler}>
-                <Input
-                  type="email"
-                  required
-                  value={email}
-                  placeholder="Your Email Address"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Input
-                  type="password"
-                  required
-                  value={password}
-                  placeholder="Your Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <Button type="submit" label="LOGIN" />
-              </form>
-              <div className="links">
-                <Link className="span" to="/signup">
-                  Create an account
-                </Link>
-                <Link className="span" to="/">
-                  Forgot Passoword
-                </Link>
-              </div>
-              {error && <span className="error">{error}</span>}
+          <div>
+            <h2 className="heading">Welcome Back!</h2>
+            <form onSubmit={loginHandler}>
+              <Input
+                type="email"
+                required
+                value={email}
+                placeholder="Your Email Address"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Input
+                type="password"
+                required
+                value={password}
+                placeholder="Your Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button type="submit" label="LOGIN" />
+            </form>
+            <div className="links">
+              <Link className="span" to="/signup">
+                Create an account
+              </Link>
+              <Link className="span" to="/">
+                Forgot Passoword
+              </Link>
+              {error ? (
+                error.map((error, index) => (
+                  <span className="error">{error.msg}</span>
+                ))
+              ) : (
+                <></>
+              )}
             </div>
-
+         
+          </div>
         </div>
       </div>
     </div>

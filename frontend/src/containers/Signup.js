@@ -17,25 +17,22 @@ const Signup = () => {
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [Error, setError] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   let navigate = useNavigate();
 
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
-  const { error,message, Loading} = userState;
+  const { error} = userState;
 
   const registerHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setPassword("");
       setConfirmPassword("");
-      setTimeout(() => setError(""), 5000);
-      return setError("Passwords donot match");
+      setTimeout(() => setErrorMsg(""), 5000);
+      return setErrorMsg("Passwords donot match");
     }
-
-    let user = { username, email, number, address, password };
-
-      dispatch(registerUser(user,navigate));
+      dispatch(registerUser(username, email, number, address, password,navigate));
       reset();
   };
 
@@ -63,11 +60,7 @@ const Signup = () => {
           id="right__signupContainer"
           className="col-lg-6 col-md-6 col-sm-12"
         >
-          {Loading ? (
-            <h2>"Registering User....."</h2>
-          ) : error ? (
-            <h1>Error while registering</h1>
-          ) : (
+
             <div>
               <h2 className="heading">Welcome to Lilies!</h2>
               <form onSubmit={registerHandler}>
@@ -124,12 +117,10 @@ const Signup = () => {
                 >
                   Already have an account. LOGIN
                 </Link>
-                {Error && <span className="error">{Error}</span>}
-              
-              {error && <span>{error}</span>}  
+                {error? error.map((error,index)=><span className="error">{error.msg}</span>):<></>}
               </div>
             </div>
-          )}
+          
         </div>
       </div>
     </div>
