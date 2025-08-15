@@ -22,37 +22,30 @@ const ProductDetailCanvas = (props) => {
   };
   return (
     <Offcanvas
-    id="canvasmedium"
+      id="canvasmedium"
       show={props.show}
       onHide={props.hide}
       placement="end"
       {...props}
     >
       <div className="product__Details">
-    
-      <div className="detail__imageContainer">
-      <img src={temporary} alt="ProductImage" />
-      </div>
+        <div className="detail__imageContainer">
+          <img src={image} alt="ProductImage" />
+        </div>
         <h1>{name}</h1>
-        <p>
-          {description} Just have a single bite of this Black Forest pastry and
-          it will all make a proper sense to you. The kick of cherry and rich
-          chocolate of this super light, airy pastry will definitely make you
-          feel "wow". The perfect combination of cherry cream and rich chocolate
-          can provide the ultimate fulfillment to your dessert craving
-        </p>
+        <p>{description}</p>
         <div className="detail__priceContainer">
           <span>Rs {price}</span>
         </div>
         <div className="detail__bottom">
-        <div>
-        Quantity
-          <input
-            value={quantity}
-            type="number"
-            placeholder="Quantity"
-            onChange={(e) => setQuantity(e.target.value)}
-          />
+          <div>
+            Quantity
+            <input
+              value={quantity}
+              type="number"
+              placeholder="Quantity"
+              onChange={(e) => setQuantity(e.target.value)}
+            />
           </div>
           <button onClick={addToCartHandler}>Add to Cart</button>
         </div>

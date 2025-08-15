@@ -22,7 +22,9 @@ const ProductCard = (props) => {
           <img src={image} alt="Menu Item" />
         </div>
         <h2>{name}</h2>
-        <p>{description}</p>
+        <p>
+          {description} {props.product.id}
+        </p>
       </div>
       <div className="product__Bottom">
         <span>Rs: {price}</span>

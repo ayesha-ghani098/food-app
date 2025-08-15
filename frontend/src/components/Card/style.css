@@ -92,16 +92,15 @@
   margin-left: 10px;
 }
 
-
-.cart__Icon{
+.cart__Icon {
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
   /* background-color: #f3c294; */
   color: #000000;
-margin-right: 10px;
+  margin-right: 10px;
 }
-.cart__Icon:focus{
-background-color:transparent;
+.cart__Icon:focus {
+  background-color: transparent;
 }

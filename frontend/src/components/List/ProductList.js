@@ -22,7 +22,7 @@ const ProductList = () => {
           return <ProductCard key={product.id} product={product} />;
         })
       ) : (
-        <h1>No Products Exist</h1>
+        <h1>No Products Exist </h1>
       )}
     </div>
   );
