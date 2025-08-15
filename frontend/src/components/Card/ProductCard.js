@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import temporary from '../../assets/menu1.png';
+import temporary from "../../assets/menu1.png";
 
 // Style and Assets
 import "./style.css";
@@ -19,7 +19,7 @@ const ProductCard = (props) => {
     <div className="product__Card">
       <div className="product__Top">
         <div>
-          <img src={temporary} alt="Menu Item" />
+          <img src={image} alt="Menu Item" />
         </div>
         <h2>{name}</h2>
         <p>{description}</p>
